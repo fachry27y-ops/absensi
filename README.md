@@ -1,5 +1,7 @@
 # SecureAttend
 
+Sistem absensi (attendance) berbasis lokasi.
+
 SecureAttend is a full-stack attendance system composed of:
 
 - Laravel REST API backend in `secureattend-backend/`
