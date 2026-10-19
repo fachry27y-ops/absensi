@@ -93,14 +93,18 @@
 </div>
 
 <script>
+    const monthlyLabels = @json($monthly['labels'] ?? []);
+    const monthlyValues = @json($monthly['values'] ?? []);
+    const chartMax = Math.max(...monthlyValues, 10);
+
     const ctx = document.getElementById('attendanceChart');
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'],
+            labels: monthlyLabels,
             datasets: [{
                 label: 'Kehadiran',
-                data: [76, 82, 88, 81, 94, 90],
+                data: monthlyValues,
                 backgroundColor: '#6366f1'
             }]
         },
@@ -113,8 +117,8 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100,
-                    ticks: { stepSize: 20 }
+                    max: chartMax + 5,
+                    ticks: { stepSize: Math.max(1, Math.ceil((chartMax + 5) / 5)) }
                 },
                 x: {
                     ticks: { autoSkip: false }

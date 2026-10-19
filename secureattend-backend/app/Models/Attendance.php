@@ -24,6 +24,15 @@ class Attendance extends Model
         'is_fake_gps_detected',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'check_in_at' => 'datetime',
+            'check_out_at' => 'datetime',
+            'is_fake_gps_detected' => 'boolean',
+        ];
+    }
+
     public function employee()
     {
         return $this->belongsTo(Employee::class);

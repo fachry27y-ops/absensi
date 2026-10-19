@@ -1,0 +1,16 @@
+# Android build output and local SDK configuration
+.gradle/
+**/build/
+local.properties
+*.iml
+
+# Laravel local dependencies, environment, and runtime files
+/secureattend-backend/.env
+/secureattend-backend/vendor/
+/secureattend-backend/node_modules/
+/secureattend-backend/public/build/
+/secureattend-backend/public/storage
+/secureattend-backend/storage/*.key
+/secureattend-backend/storage/logs/*.log
+/secureattend-backend/database/*.sqlite
+/secureattend-backend/.phpunit.result.cache

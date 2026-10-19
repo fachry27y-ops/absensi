@@ -42,6 +42,6 @@ class AuthApiTest extends TestCase
         $this->withHeader('Authorization', 'Bearer '.$token)
             ->getJson('/api/dashboard')
             ->assertStatus(200)
-            ->assertJsonStructure(['stats', 'recent', 'locations']);
+            ->assertJsonStructure(['stats', 'recent', 'locations', 'monthly', 'my_attendance']);
     }
 }
